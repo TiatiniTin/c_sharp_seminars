@@ -8,12 +8,19 @@ int num = new Random().Next(begin, end + 1);
 
 Console.WriteLine("Сгенерированное число: " + num);
 
-if (num / 100 == 0) 
+int counter = 10;
+
+while (num / counter > 0 )
 {
-    Console.WriteLine("Третьей цифры нет");
+    counter *= 10;
+}
+
+if (counter >= 1000)
+{
+    int thirdDigit = (num % (counter / 100)) / (counter / 1000);
+    Console.WriteLine("Третья цифра: " + thirdDigit);
 }
 else 
 {
-    int thirdDigit = (num % 1000) / 100;
-    Console.WriteLine("Третья цифра: " + thirdDigit);
+    Console.WriteLine("У числа нет третьей цифры");
 }
