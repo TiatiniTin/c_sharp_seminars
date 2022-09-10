@@ -5,7 +5,7 @@
 // 9012 -> 3
 // 23 -> 0
 
-int getDigitsNumber(int num) {
+int getDigitsAmount(int num) {
     int digitsNumber = 1;
 
     while (num > 9) {
@@ -27,7 +27,7 @@ int[] createDigitsArray (int num, int len) {
     return digits;
 }
 
-int getDigitsSumOfInputNumberDivisors (int num, int[] digits) {
+int getSumOfDigits (int num, int[] digits) {
     int sum = 0;
     int len = digits.Length;
     
@@ -47,8 +47,8 @@ int getDigitsSumOfInputNumberDivisors (int num, int[] digits) {
 Console.Write("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-int length = getDigitsNumber(number);
+int length = getDigitsAmount(number);
 int[] digits = createDigitsArray(number, length);
-int sum = getDigitsSumOfInputNumberDivisors(number, digits);
+int sum = getSumOfDigits(number, digits);
 
 Console.WriteLine($"Сумма цифр в числе, которые являются делителями числа равна {sum}");
